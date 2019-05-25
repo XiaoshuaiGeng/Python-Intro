@@ -8,6 +8,12 @@ print("{}".format("Hello World"))
 print(f'hello world {testString}\n')
 # f-string method is supported in python 3.6 or higher
 print('****************\n')
+
+# % operator exercise
+print("********  % operator exercise  ********")
+print("The codes of this line below are:")
+print('Here is %s %s\n'%("the % operator",'test'))
+
 # list testing
 print('List testing')
 print("my_list1 is [1,2,3]")
