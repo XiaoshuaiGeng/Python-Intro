@@ -5,7 +5,7 @@ result = 100 / 777
 testString = "test"
 print(result)
 print("{}".format("Hello World"))
-print(f'hello world{testString}')
+print(f'hello world {testString}\n')
 # f-string method is supported in python 3.6 or higher
 print('****************\n')
 # list testing
