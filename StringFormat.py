@@ -12,14 +12,14 @@ print('****************\n')
 # % operator exercise
 print("********  % operator exercise  ********")
 print("The codes of this line below are:")
-print('Here is %s %s\n'%("the % operator",'test'))
+print('Here is %s %s\n' % ("the % operator", 'test'))
 
 # list testing
 print('List testing')
 print("my_list1 is [1,2,3]")
 print("my_list2 is ['String',100,23,2]")
-my_list1 = [1,2,3]
-my_list2 = ['String',100.23,2]
+my_list1 = [1, 2, 3]
+my_list2 = ['String', 100.23, 2]
 # len() measures the length of the string
 print('my_list2 is {}'.format(len(my_list2)))
 print('This element is from my_list1[2]: {}'.format(my_list1[2]))
