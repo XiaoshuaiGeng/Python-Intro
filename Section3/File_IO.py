@@ -14,3 +14,9 @@ file.seek(2)
 print(file.read())
 file.seek(0)
 print(file.readlines())
+file.close()
+
+# with statement
+with open('fileload.txt') as my_new_file:
+    contents = my_new_file.read()
+    print(contents)
