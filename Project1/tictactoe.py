@@ -43,7 +43,7 @@ def win_check(board, symbol):
     (board[1] == symbol and board[4] == symbol and board[7] == symbol) or # second col
     (board[2] == symbol and board[5] == symbol and board[8] == symbol) or # third col
     (board[0] == symbol and board[4] == symbol and board[8] == symbol) or # left diagonal
-    (board[2] == symbol and board[4] == symbol and board[6] == symbol))
+    (board[2] == symbol and board[4] == symbol and board[6] == symbol))   # right diagonal
 
 
 def choose_first():
@@ -75,14 +75,18 @@ def replay():
 while True:
     print("********Tic Tac Toe Game********")
     board = list('$'*9)
-    player1,player2 = player_input()
+    player1, player2 = player_input()
     turn = choose_first()  # decide which player goes first
     print(f'{turn} goes first')
     game = True
     while game:
-        display_board(board)
+        display_board(board) # display board info at the beginning of every turn
+
+        # Player 1's turn
         if turn == 'player1':
             place_marker(board, player_choice(board), player1)
+
+            # Check the game condition
             if win_check(board, player1):
                 game = False
                 display_board(board)
@@ -94,6 +98,7 @@ while True:
                 print('Its a draw')
             turn = 'player2'
 
+        # Player 2's turn
         else:
             place_marker(board, player_choice(board), player2)
             if win_check(board, player2):
@@ -106,5 +111,7 @@ while True:
                 display_board(board)
                 print('Its a draw')
             turn = 'player1'
+            
+    # End program if do not replay
     if not replay():
         break
