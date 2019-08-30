@@ -1,15 +1,6 @@
 import random
 
 
-def boardinit():
-    """
-    Initialize a board
-    INPUT: NONE
-    OUTPUT: return a list contains 9 '$' elements
-    """
-    return list('$'*9)
-
-
 def display_board(board):
     for index, symbol in enumerate(board):
         if index % 3 == 0 and index != 0:
@@ -83,7 +74,7 @@ def replay():
 
 while True:
     print("********Tic Tac Toe Game********")
-    board = boardinit()
+    board = list('$'*9)
     player1,player2 = player_input()
     turn = choose_first()  # decide which player goes first
     print(f'{turn} goes first')
