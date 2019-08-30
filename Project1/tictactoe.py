@@ -1,6 +1,7 @@
 import random
 
 
+# display the game board
 def display_board(board):
     for index, symbol in enumerate(board):
         if index % 3 == 0 and index != 0:
@@ -20,6 +21,7 @@ def display_board(board):
     print()
 
 
+# let user choose the symbol X or O
 def player_input():
     marker = ''
     while marker != 'X' and marker != 'O':
@@ -31,10 +33,12 @@ def player_input():
         return ['O', 'X']
 
 
+# place the symbol on board to the given index
 def place_marker(board, index, symbol):
     board[index] = symbol
 
 
+# check the board winning condition
 def win_check(board, symbol):
     return ((board[0] == symbol and board[1] == symbol and board[2] == symbol) or # first row
     (board[3] == symbol and board[4] == symbol and board[5] == symbol) or # second row
@@ -46,6 +50,7 @@ def win_check(board, symbol):
     (board[2] == symbol and board[4] == symbol and board[6] == symbol))   # right diagonal
 
 
+# use random to decide which player go first
 def choose_first():
     turn = random.randrange(2)
     if turn == 0:
@@ -53,14 +58,18 @@ def choose_first():
     return 'player2'
 
 
+# check if the given index is empty
 def space_check(board, index):
     return board[index] == '$'
 
 
+# check if the board is full
 def full_board_check(board):
     return not ('$' in board)
 
 
+# ask for user's next move
+# will loop continuously if received invalid input
 def player_choice(board):
     position = int(input('Please choose your next move: '))
     while position not in [0, 1, 2, 3, 4, 5, 6, 7, 8] or not space_check(board, position):
@@ -68,6 +77,7 @@ def player_choice(board):
     return position
 
 
+# ask if user want to replay the game
 def replay():
     return input('Restart? Yes or No ').lower().startswith('y')
 
@@ -111,7 +121,7 @@ while True:
                 display_board(board)
                 print('Its a draw')
             turn = 'player1'
-            
+
     # End program if do not replay
     if not replay():
         break
