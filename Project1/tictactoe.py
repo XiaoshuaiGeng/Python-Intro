@@ -40,14 +40,14 @@ def place_marker(board, index, symbol):
 
 # check the board winning condition
 def win_check(board, symbol):
-    return ((board[0] == symbol and board[1] == symbol and board[2] == symbol) or # first row
-    (board[3] == symbol and board[4] == symbol and board[5] == symbol) or # second row
-    (board[6] == symbol and board[7] == symbol and board[8] == symbol) or # third row
-    (board[0] == symbol and board[3] == symbol and board[6] == symbol) or # first col
-    (board[1] == symbol and board[4] == symbol and board[7] == symbol) or # second col
-    (board[2] == symbol and board[5] == symbol and board[8] == symbol) or # third col
-    (board[0] == symbol and board[4] == symbol and board[8] == symbol) or # left diagonal
-    (board[2] == symbol and board[4] == symbol and board[6] == symbol))   # right diagonal
+    return ((board[0] == board[1] == board[2] == symbol) or # first row
+    (board[3] == board[4] == board[5] == symbol) or # second row
+    (board[6] == board[7] == board[8] == symbol) or # third row
+    (board[0] == board[3] == board[6] == symbol) or # first col
+    (board[1] == board[4] == board[7] == symbol) or # second col
+    (board[2] == board[5] == board[8] == symbol) or # third col
+    (board[0] == board[4] == board[8] == symbol) or # left diagonal
+    (board[2] == board[4] == board[6] == symbol))   # right diagonal
 
 
 # use random to decide which player go first
